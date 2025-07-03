@@ -1,0 +1,33 @@
+.navbar {
+    text-transform: capitalize;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center; 
+    width: 500px;
+    margin: 0 auto;
+    background-color: #242424;
+    border: 1px solid #4645456c;
+    padding: 10px 0;
+    border-radius: 20px;
+}
+
+.navbar ul li {
+    font-size: 14px;
+    margin-left: 25px; 
+    cursor: pointer; 
+}
+
+.navbar ul li:first-child {
+    margin-left: 0; 
+}
+
+.navbar ul li:hover {
+    opacity: 0.7;
+}

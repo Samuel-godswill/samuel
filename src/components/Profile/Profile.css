@@ -1,0 +1,350 @@
+.profile {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 7em;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  .profile-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .profile-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .featured-article {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .featured-article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .featured-article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  .featured-article .article-date {
+    font-size: 0.875rem;
+    opacity: 0.9;
+    font-weight: 500;
+  }
+  
+  .featured-article .article-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    line-height: 1.3;
+  }
+  
+  .featured-article .article-excerpt {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 1rem 0 1.5rem 0;
+    opacity: 0.95;
+  }
+  
+  .featured-article .read-more-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+  }
+  
+  .featured-article .read-more-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .articles-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .article-card {
+    background: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #3a3a3a;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .article-card:hover {
+    transform: translateY(-2px);
+    border-color: #667eea;
+    box-shadow: 0 10px 25px -5px rgba(102, 126, 234, 0.1);
+  }
+  
+  .article-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .article-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .article-card .article-date {
+    font-size: 0.875rem;
+    color: #888;
+    font-weight: 500;
+  }
+  
+  .article-card .article-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0.75rem 0;
+    color: #fff;
+    line-height: 1.4;
+  }
+  
+  .article-card .article-excerpt {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin: 0.75rem 0 1rem 0;
+  }
+  
+  .article-card .read-more-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .article-card .read-more-link:hover {
+    color: #764ba2;
+  }
+  
+  .newsletter-section,
+  .work-section {
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .newsletter-section:hover,
+  .work-section:hover {
+    border-color: #667eea;
+    box-shadow: 0 4px 12px -2px rgba(102, 126, 234, 0.1);
+  }
+  
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .email-icon,
+  .work-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .email-icon svg,
+  .work-icon svg {
+    width: 24px;
+    height: 24px;
+    color: #667eea;
+  }
+  
+  .section-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+  }
+  
+  .section-header p {
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .email-input {
+    padding: 0.75rem;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .email-input:focus {
+    outline: none;
+    border-color: #667eea;
+  }
+  
+  .email-input::placeholder {
+    color: #888;
+  }
+  
+  .subscribe-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .subscribe-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px -2px rgba(102, 126, 234, 0.4);
+  }
+  
+  .work-experience {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .job-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .job-item:hover {
+    background: #333;
+  }
+  
+  .company-logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #3a3a3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .company-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .job-details h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 0.25rem 0;
+  }
+  
+  .company-name {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin: 0 0 0.25rem 0;
+  }
+  
+  .job-date {
+    font-size: 0.85rem;
+    color: #888;
+  }
+  
+  /* Action Buttons */
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .download-resume-btn,
+  .schedule-call-btn {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .download-resume-btn {
+    background: #3a3a3a;
+    color: #fff;
+    border: 1px solid #4a4a4a;
+  }
+  
+  .download-resume-btn:hover {
+    background: #4a4a4a;
+    transform: translateY(-2px);
+  }
+  
+  .download-resume-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .schedule-call-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+  }
+  
+  .schedule-call-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px -2px rgba(102, 126, 234, 0.4);
+  }
+  

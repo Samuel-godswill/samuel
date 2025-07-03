@@ -1,0 +1,109 @@
+.hero{
+    /* background-color: green; */
+    text-transform: capitalize;
+    max-width: 1020px;
+    margin: 0 auto;
+    margin-top: 2.5em;
+}
+.hero-icon {
+    width: 70px; 
+    height: 70px;
+    overflow: hidden;
+    position: relative;
+}
+.animated-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: morph 5s infinite; 
+}
+
+@keyframes morph {
+    0%, 100% {
+        border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    }
+    14% {
+        border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
+    }
+    28% {
+        border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;
+    }
+    42% {
+        border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;
+    }
+    56% {
+        border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%;
+    }
+    70% {
+        border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;
+    }
+    84% {
+        border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
+    }
+}
+.hero .hero-text{
+    align-items: flex-start;
+}
+.hero-text h1{
+    font-size: 50px;
+    font-weight: 600;
+    margin-top: 0.4em;
+    text-align: left;
+}
+.hero-text p{
+    width: 700px;
+    line-height: 1.6;
+    font-size: 15.2px;
+    font-weight: 300;
+    margin-top: 0.8em;
+    color: rgb(161 161 170);
+}
+.hero-medias {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.6em;
+}
+
+.hero-medias span {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.hero-medias span a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.hero-medias svg {
+    width: 24px;
+    height: 24px;
+    fill: #a1a1aa;
+    transition: fill 0.3s ease;
+}
+
+.hero-medias span:hover svg {
+    fill: #ffffff;
+}
