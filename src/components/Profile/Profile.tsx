@@ -12,12 +12,12 @@ const Profile = () => {
 
         <section className='project-item'>
           <p><a href="https://hr-system-hi4n.vercel.app/auth/login">Drug.com</a></p>
-          <span>An advanced AI solutions platform offering services in computer vision, natural language processing, predictive analytics, and tailored machine learning model development for businesses.</span>
+          <span>A healthcare management platform that enables patients to register, book appointments, and manage their medical interactions seamlessly, while helping doctors handle prescriptions and patient records efficiently.</span>
         </section>
 
         <section className='project-item'>
           <p><a href="https://eti-intelligence.vercel.app/home">Eti-Intelligence</a></p>
-          <span>A modern shipping and logistics web application designed to simplify cargo management, service access, and operational efficiency for maritime and delivery services.</span>
+          <span>An advanced AI solutions platform offering services in computer vision, natural language processing, predictive analytics, and tailored machine learning model development for businesses.</span>
         </section>
 
         <section className='project-item'>
