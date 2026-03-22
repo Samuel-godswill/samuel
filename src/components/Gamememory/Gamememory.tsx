@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import "./GameMemory.css";
+import "./Gamememory.css";
 
 // ── icons (SVG paths as strings) ─────────────────────────────────────────
 // Using minimal tech-themed symbols that fit a dev portfolio
