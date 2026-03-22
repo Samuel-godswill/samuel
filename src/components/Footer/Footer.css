@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 6em;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid #46454530;
     margin-top: 7%;
     background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
     position: relative;
@@ -17,7 +17,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, #667eea, #764ba2, transparent);
+    background: linear-gradient(90deg, transparent, #4645456c, rgb(103, 103, 107), transparent);
     opacity: 0.6;
   }
   
@@ -56,4 +56,26 @@
       left: 100%;
     }
   }
+
+  .heart {
+  display: inline-block;
+  color: #ff4d6d;
+  margin: 0 4px;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(0.95);
+  }
+  60% {
+    transform: scale(1.15);
+  }
+}
   

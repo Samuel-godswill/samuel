@@ -10,7 +10,7 @@ body {
   font-size: 17px;
 }
 
-@media (max-width: 1023px) {
+/* @media (max-width: 1023px) {
   .app-container {
     display: none !important;
   }
@@ -46,4 +46,4 @@ body {
   .mobile-message {
     display: none !important;
   }
-}
+} */

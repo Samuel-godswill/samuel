@@ -1,0 +1,340 @@
+/* ── Memory Page ────────────────────────────────────────────────────────── */
+
+.gmem-page {
+  min-height: 100vh;
+  /* background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* .gmem-shimmer {
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.03), transparent);
+  animation: shimmermem 4s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmermem {
+  0%   { left: -100%; }
+  100% { left: 100%; }
+} */
+
+.gmem-wrapper {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── header ─────────────────────────────────────────────────────────────── */
+.gmem-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+}
+
+.gmem-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgb(88, 88, 90);
+  margin: 0 0 0.3em;
+}
+
+.gmem-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* ── stats ───────────────────────────────────────────────────────────────── */
+.gmem-stats {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.gmem-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid #46454530;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  min-width: 62px;
+}
+
+.gmem-stat-val {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.gmem-stat-val--green { color: #4ade80; }
+.gmem-stat-val--blue  { color: #facc15; }
+
+.gmem-stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(88, 88, 90);
+}
+
+/* ── progress ───────────────────────────────────────────────────────────── */
+.gmem-progress-track {
+  height: 2px;
+  background: #46454530;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.gmem-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4ade80, #60a5fa);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+/* ── board ───────────────────────────────────────────────────────────────── */
+.gmem-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+/* ── card ────────────────────────────────────────────────────────────────── */
+.gmem-card {
+  aspect-ratio: 1;
+  position: relative;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  perspective: 600px;
+  padding: 0;
+  border-radius: 10px;
+}
+
+.gmem-card__back,
+.gmem-card__front {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  transition: transform 0.4s ease;
+}
+
+.gmem-card__back {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #46454530;
+  color: rgb(88, 88, 90);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 22px;
+  font-weight: 700;
+  transform: rotateY(0deg);
+  transition: transform 0.4s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.gmem-card:hover:not(.gmem-card--flipped) .gmem-card__back {
+  border-color: #4645456c;
+  background: rgba(255,255,255,0.08);
+}
+
+.gmem-card__front {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid #46454550;
+  transform: rotateY(180deg);
+  color: rgb(161, 161, 170);
+}
+
+.gmem-card__front svg {
+  width: 34px;
+  height: 34px;
+  stroke: rgb(161, 161, 170);
+}
+
+/* flipped state */
+.gmem-card--flipped .gmem-card__back  { transform: rotateY(-180deg); }
+.gmem-card--flipped .gmem-card__front { transform: rotateY(0deg); }
+
+/* matched state */
+.gmem-card--matched .gmem-card__front {
+  background: rgba(74, 222, 128, 0.08);
+  border-color: rgba(74, 222, 128, 0.25);
+}
+
+.gmem-card--matched .gmem-card__front svg {
+  stroke: #4ade80;
+}
+
+/* ── footer ─────────────────────────────────────────────────────────────── */
+.gmem-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gmem-btn {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.55rem 1.25rem;
+  border: 1px solid #46454530;
+  border-radius: 100px;
+  background: transparent;
+  color: rgb(161, 161, 170);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gmem-btn:hover { border-color: #4645456c; color: #fff; }
+.gmem-btn:active { transform: scale(0.97); }
+
+.gmem-btn--primary {
+  background: #fff;
+  color: #1a1a1a;
+  border-color: #fff;
+}
+
+.gmem-btn--primary:hover { background: #e2e2e2; border-color: #e2e2e2; color: #1a1a1a; }
+
+.gmem-tip {
+  font-size: 12px;
+  color: rgb(88, 88, 90);
+  margin: 0;
+}
+
+/* ── win overlay ─────────────────────────────────────────────────────────── */
+.gmem-win-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeInMem 0.3s ease;
+}
+
+@keyframes fadeInMem {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.gmem-win-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.5rem 2rem;
+  background: #1e1e1e;
+  border: 1px solid #46454550;
+  border-radius: 16px;
+  text-align: center;
+  animation: slideUpMem 0.35s ease;
+}
+
+@keyframes slideUpMem {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.gmem-win-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.gmem-win-details {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.gmem-win-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.gmem-win-detail__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgb(88, 88, 90);
+}
+
+.gmem-win-detail__val {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.gmem-win-detail__val--blue { color: #60a5fa; }
+
+.gmem-win-divider {
+  width: 1px;
+  height: 36px;
+  background: #46454530;
+}
+
+/* ── mobile block ───────────────────────────────────────────────────────── */
+.gmem-mobile {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.gmem-mobile__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  max-width: 300px;
+}
+
+.gmem-mobile__icon { font-size: 40px; }
+
+.gmem-mobile__title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.gmem-mobile__body {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(161, 161, 170);
+  line-height: 1.6;
+  margin: 0;
+}

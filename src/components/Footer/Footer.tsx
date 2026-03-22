@@ -4,8 +4,9 @@ const Footer = () => {
   return (
     <div className="footer">
         <p className="footer-container">
-        &copy; Ugbem Samuel Godswill 2025. All rights reserved.
-        </p>
+  &copy; {new Date().getFullYear()} Ugbem Samuel Godswill{" "}
+  <span className="heart">♥</span> omoòga.
+</p>
     </div>
   )
 }

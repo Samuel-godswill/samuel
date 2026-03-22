@@ -9,23 +9,12 @@ const Hero = () => {
       </div>
       <div className="hero-text">
         <h1>Frontend Developer</h1>
-        <p>
-          Hi, I’m Samuel — a results-driven Frontend Developer with 3 years of
-          hands-on experience crafting visually engaging and user-focused web
-          applications. I specialize in building performant, scalable, and
-          accessible interfaces that strike the perfect balance between
-          aesthetics and functionality. With a sharp eye for design and a deep
-          understanding of frontend technologies, I’ve delivered tailored
-          solutions across diverse sectors including fintech, education,
-          logistics, and real estate. From startups to established companies,
-          I’ve helped bring ideas to life—delivering pixel-perfect, responsive
-          products that users love. I take pride in writing clean, maintainable
-          code and continuously evolving through learning and collaboration.
-          Currently, I serve as the Lead Frontend Engineer at Etihuku
-          Technologies, where I lead high-impact projects and help shape product
-          experiences from the ground up. Let’s collaborate and build the
-          future!
-        </p>
+        <section>
+          <p>My name is Samuel. I am a highly skilled and results-driven Frontend Developer with about three (3) years of hands-on experience creating visually stunning and user-friendly web applications. I have demonstrated a keen eye for design throughout my career, combining aesthetics with technical expertise to produce engaging and responsive interfaces. My commitment to clean code and accessibility ensures that my projects are visually appealing yet performant and scalable.</p>
+          <p>Currently building <a href="https://www.africanuniversitybn.edu.bj">African University of Benin(AUB)</a>. </p>
+          <p>I work primarily with TypeScript and the JS ecosystem, but I'm also exploring Svelte, Rust and Go.</p>
+          <i>"My goal is to be as cracked of an engineer as I can be."</i>
+        </section>
       </div>
 
       <div className="hero-medias">

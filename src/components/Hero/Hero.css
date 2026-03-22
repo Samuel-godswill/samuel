@@ -50,13 +50,27 @@
     margin-top: 0.4em;
     text-align: left;
 }
+.hero-text section{
+    margin-top: 0.8em;
+}
 .hero-text p{
     width: 700px;
     line-height: 1.6;
     font-size: 15.2px;
+    margin-bottom: 0.9em;
     font-weight: 300;
-    margin-top: 0.8em;
     color: rgb(161 161 170);
+}
+.hero-text section i{
+    line-height: 1.6;
+    font-size: 16.2px;
+    font-weight: 300;
+    color: rgb(88, 88, 90);
+}
+.hero-text section p a{
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px solid #fff;
 }
 .hero-medias {
     display: flex;
@@ -106,4 +120,36 @@
 
 .hero-medias span:hover svg {
     fill: #ffffff;
+}
+
+/* ── Mobile Responsive ─────────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    margin-top: 1.5em;
+    padding: 0 1.25rem;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text p {
+    width: 100%; /* ← this was the main culprit */
+    font-size: 14px;
+  }
+
+  .hero-text section i {
+    font-size: 14px;
+  }
+
+  .hero-medias {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 26px;
+  }
 }

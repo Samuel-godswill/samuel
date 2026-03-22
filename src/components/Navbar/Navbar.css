@@ -1,33 +1,47 @@
 .navbar {
     text-transform: capitalize;
-    max-width: 1200px;
+    max-width: 1020px; /* match your other sections */
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 40px 1.25rem 20px;
 }
 
 .navbar ul {
     display: flex;
     flex-direction: row;
     list-style: none;
-    justify-content: center; 
-    width: 500px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: fit-content;
     margin: 0 auto;
     background-color: #242424;
     border: 1px solid #4645456c;
-    padding: 10px 0;
-    border-radius: 20px;
+    padding: 8px 20px;
+    border-radius: 30px;
 }
 
-.navbar ul li {
+.navbar ul li a {
     font-size: 14px;
-    margin-left: 25px; 
-    cursor: pointer; 
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
 }
 
-.navbar ul li:first-child {
-    margin-left: 0; 
-}
-
-.navbar ul li:hover {
+.navbar ul li a:hover,
+.navbar ul li a.active {
     opacity: 0.7;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 1.25rem 12px;
+  }
+
+  .navbar ul li a {
+    font-size: 13px;
+    padding: 4px 8px;
+  }
 }

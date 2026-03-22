@@ -1,0 +1,408 @@
+/* ── Piano Page ─────────────────────────────────────────────────────────── */
+
+.gpiano-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.gpiano-shimmer {
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.03), transparent);
+  animation: shimmer-piano 4s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer-piano {
+  0%   { left: -100%; }
+  100% { left: 100%; }
+}
+
+.gpiano-wrapper {
+  width: 100%;
+  max-width: 780px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── header ─────────────────────────────────────────────────────────────── */
+.gpiano-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.gpiano-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgb(88, 88, 90);
+  margin: 0 0 0.3em;
+}
+
+.gpiano-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* ── note display ───────────────────────────────────────────────────────── */
+.gpiano-note-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid #46454530;
+  border-radius: 10px;
+  padding: 0.6rem 1.25rem;
+  min-width: 80px;
+  text-align: center;
+}
+
+.gpiano-note-display__note {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: #4ade80;
+  line-height: 1;
+  animation: noteFlash 0.15s ease;
+}
+
+@keyframes noteFlash {
+  from { opacity: 0.4; transform: scale(0.9); }
+  to   { opacity: 1;   transform: scale(1);   }
+}
+
+.gpiano-note-display__idle {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(88, 88, 90);
+  line-height: 1;
+}
+
+.gpiano-note-display__label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(88, 88, 90);
+}
+
+/* ── controls ───────────────────────────────────────────────────────────── */
+.gpiano-controls {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.75rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid #46454530;
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+
+.gpiano-control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.gpiano-control-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(88, 88, 90);
+  white-space: nowrap;
+}
+
+/* wave buttons */
+.gpiano-wave-btns {
+  display: flex;
+  gap: 4px;
+}
+
+.gpiano-wave-btn {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border: 1px solid #46454530;
+  border-radius: 6px;
+  background: transparent;
+  color: rgb(88, 88, 90);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.gpiano-wave-btn:hover { border-color: #4645456c; color: #ccc; }
+
+.gpiano-wave-btn--active {
+  background: rgba(74, 222, 128, 0.12);
+  border-color: rgba(74, 222, 128, 0.3);
+  color: #4ade80;
+}
+
+/* volume slider */
+.gpiano-slider {
+  width: 100px;
+  accent-color: #4ade80;
+  cursor: pointer;
+}
+
+/* octave controls */
+.gpiano-octave-btns {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gpiano-oct-btn {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #46454530;
+  border-radius: 6px;
+  background: transparent;
+  color: rgb(161, 161, 170);
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  line-height: 1;
+}
+
+.gpiano-oct-btn:hover { border-color: #4645456c; color: #fff; }
+.gpiano-oct-btn:active { transform: scale(0.93); }
+
+.gpiano-oct-val {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  min-width: 28px;
+  text-align: center;
+}
+
+/* ── keyboard wrap ──────────────────────────────────────────────────────── */
+.gpiano-keyboard-wrap {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+  background: #0f0f0f;
+  border: 1px solid #46454530;
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.gpiano-divider {
+  width: 1px;
+  height: 130px;
+  background: #46454530;
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+.gpiano-octave {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.gpiano-octave-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(88, 88, 90);
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* ── keys container ─────────────────────────────────────────────────────── */
+.gpiano-keys {
+  position: relative;
+  display: flex;
+  gap: 3px;
+  height: 130px;
+}
+
+/* ── white key ──────────────────────────────────────────────────────────── */
+.gpiano-white {
+  width: 44px;
+  height: 130px;
+  background: linear-gradient(180deg, #e8e8e0 0%, #f5f5f0 40%, #ffffff 100%);
+  border: 1px solid #999;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 8px;
+  gap: 2px;
+  position: relative;
+  transition: background 0.05s ease, transform 0.05s ease;
+  box-shadow:
+    inset 0 -3px 6px rgba(0,0,0,0.15),
+    2px 4px 8px rgba(0,0,0,0.5);
+}
+
+.gpiano-white:hover {
+  background: linear-gradient(180deg, #f0f0e8 0%, #fafaf5 40%, #ffffff 100%);
+}
+
+.gpiano-white--active {
+  background: linear-gradient(180deg, #b8e8c8 0%, #d4f5e0 40%, #e8fff2 100%) !important;
+  transform: translateY(2px);
+  box-shadow:
+    inset 0 -1px 3px rgba(0,0,0,0.1),
+    1px 2px 4px rgba(0,0,0,0.4);
+}
+
+.gpiano-key-label {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #555;
+  line-height: 1;
+}
+
+.gpiano-note-label {
+  font-size: 8px;
+  font-weight: 600;
+  color: #999;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+/* ── black key ──────────────────────────────────────────────────────────── */
+.gpiano-black {
+  position: absolute;
+  width: 28px;
+  height: 82px;
+  background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 60%, #111 100%);
+  border: 1px solid #000;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 6px;
+  transition: background 0.05s ease, transform 0.05s ease;
+  box-shadow:
+    inset 0 -2px 4px rgba(255,255,255,0.05),
+    2px 5px 10px rgba(0,0,0,0.8);
+}
+
+.gpiano-black:hover {
+  background: linear-gradient(180deg, #222 0%, #333 60%, #1a1a1a 100%);
+}
+
+.gpiano-black--active {
+  background: linear-gradient(180deg, #0a3d1f 0%, #145a32 60%, #0a3d1f 100%) !important;
+  transform: translateY(2px);
+  box-shadow:
+    inset 0 -1px 2px rgba(255,255,255,0.05),
+    1px 2px 5px rgba(0,0,0,0.8);
+}
+
+.gpiano-black-label {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.4);
+  line-height: 1;
+}
+
+/* Black key positions (relative to white key grid, each white = 44px + 3px gap = 47px) */
+.gpiano-black--pos-0 { left: calc(0 * 47px + 31px); }
+.gpiano-black--pos-1 { left: calc(1 * 47px + 31px); }
+.gpiano-black--pos-2 { left: calc(2 * 47px + 31px); }
+.gpiano-black--pos-3 { left: calc(3 * 47px + 31px); }
+.gpiano-black--pos-4 { left: calc(4 * 47px + 31px); }
+.gpiano-black--pos-5 { left: calc(5 * 47px + 31px); }
+.gpiano-black--pos-6 { left: calc(6 * 47px + 31px); }
+
+/* ── legend ─────────────────────────────────────────────────────────────── */
+.gpiano-legend {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gpiano-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: rgb(88, 88, 90);
+}
+
+.gpiano-legend-key {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid #46454530;
+  border-radius: 5px;
+  padding: 2px 7px;
+  color: rgb(161, 161, 170);
+  white-space: nowrap;
+}
+
+/* ── mobile block ───────────────────────────────────────────────────────── */
+.gpiano-mobile {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.gpiano-mobile__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  max-width: 300px;
+}
+
+.gpiano-mobile__icon { font-size: 40px; }
+
+.gpiano-mobile__title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.gpiano-mobile__body {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(161, 161, 170);
+  line-height: 1.6;
+  margin: 0;
+}
