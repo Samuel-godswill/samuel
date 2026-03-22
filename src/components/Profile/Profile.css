@@ -1,51 +1,53 @@
 .profile {
     max-width: 1020px;
-    margin: 0 auto;
-    margin-top: 3em;
+    margin: 3em auto 0;
+    padding: 0 1.25rem;
     display: flex;
     flex-direction: row;
     gap: 2rem;
-  }
+}
 
-  .profile-content{
-    width: 700px;
-  }
-  
-  /* .profile-content{
-    font-size: 15.2px;
-    line-height: 1.6;
-    font-weight: 300;
-    color: rgb(161 161 170);
-  }
+.profile-content {
+    width: 100%;
+    max-width: 700px;
+}
 
-  .profile-header{
-    color: #fff!important;
-  } */
+.profile-header {
+    color: #fff;
+}
 
-  .profile-content section{
+.project-item {
     font-size: 15.2px;
     font-weight: 300;
-    color: rgb(161 161 170);
+    color: rgb(161, 161, 170);
     margin-bottom: 0.9em;
     line-height: 1.6;
-  }
-  
-  .profile-content section a{
+}
+
+.project-item a {
     text-decoration: none;
     color: #fff;
     border-bottom: 1px solid #fff;
-  }
+}
 
-
-/* ── Mobile Responsive ─────────────────────── */
 @media (max-width: 768px) {
-  .profile {
-    margin-top: 2em;
-    padding: 0 1.25rem;
-    flex-direction: column;
-  }
+    .profile {
+        margin-top: 2em;
+        flex-direction: column;
+    }
 
-  .profile-content section {
-    font-size: 14px;
+    .profile-content {
+        max-width: 100%;
+    }
+
+    .project-item {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px){
+  .profile-header{
+    font-size: 26px;
+    margin-bottom: 0.8em;
   }
 }

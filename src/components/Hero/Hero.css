@@ -54,7 +54,8 @@
     margin-top: 0.8em;
 }
 .hero-text p{
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     line-height: 1.6;
     font-size: 15.2px;
     margin-bottom: 0.9em;
@@ -75,7 +76,8 @@
 .hero-medias {
     display: flex;
     flex-direction: row;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: 60px;
     align-items: center;
     justify-content: space-between;
@@ -122,7 +124,6 @@
     fill: #ffffff;
 }
 
-/* ── Mobile Responsive ─────────────────────── */
 @media (max-width: 768px) {
   .hero {
     margin-top: 1.5em;
@@ -134,22 +135,43 @@
   }
 
   .hero-text p {
-    width: 100%; /* ← this was the main culprit */
+    width: 100%; 
     font-size: 14px;
   }
 
   .hero-text section i {
     font-size: 14px;
+    display: block;
   }
 
   .hero-medias {
     width: 100%;
     max-width: 280px;
   }
+
+  .hero-medias span {
+        width: 32px;
+        height: 32px;
+    }
+
+    .hero-medias svg {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 @media (max-width: 480px) {
   .hero-text h1 {
     font-size: 26px;
   }
+
+  .hero-medias span {
+        width: 28px;
+        height: 28px;
+    }
+
+    .hero-medias svg {
+        width: 18px;
+        height: 18px;
+    }
 }
