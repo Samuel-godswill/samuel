@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import "./GamePiano.css";
+import "./Gamepiano.css";
 
 // ── Key map: keyboard key → note ─────────────────────────────────────────
 // Two octaves mapped across the keyboard rows
